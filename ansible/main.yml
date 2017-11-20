@@ -1,0 +1,4 @@
+---
+# this playbook is entry point
+- hosts: all
+  - include: go.yml

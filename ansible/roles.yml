@@ -1,0 +1,2 @@
+- name: sansible.golang
+  version: v1.0.6
