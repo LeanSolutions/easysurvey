@@ -1,4 +1,6 @@
 ---
 # this playbook is entry point
 - hosts: all
-  - include: go.yml
+
+  tasks:
+    - include_tasks: go.yml
