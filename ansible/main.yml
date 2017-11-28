@@ -2,5 +2,5 @@
 # this playbook is entry point
 - hosts: all
 
-  tasks:
-    - include_tasks: go.yml
+  roles:
+    - role: andrewrothstein.go

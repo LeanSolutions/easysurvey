@@ -11,6 +11,7 @@ func main() {
 }
 
 func handleRequests() {
+	fmt.Println("Starting server...")
 	http.HandleFunc("/", homepage)
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }

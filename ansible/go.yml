@@ -1,5 +1,0 @@
----
-- name: Install and configure golang
-  hosts: all
-  roles:
-    - role: sansible.golang
