@@ -1,6 +1,12 @@
 ---
 # this playbook is entry point
 - hosts: all
-
+  sudo: True
   roles:
-    - role: andrewrothstein.go
+    - role: joshualund.golang
+
+  tasks:
+    - name: run main.go
+      shell: chdir=/home/vagrant/go/src/EasySurvey nohup go run main.go &
+      environment: 
+        PATH: $PATH:/usr/local/go/bin
