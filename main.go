@@ -1,22 +1,31 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+	"EasySurvey/app/shared/server"
+	"encoding/json"
+	"os"
+	"runtime"
 )
 
+func init() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
+}
+
 func main() {
-	handleRequests()
+	jsonconfig.Load("config"+string(os.PathSeparator)+"config.json", config)
+
+	server.Run(route.LoadHTTP(), config.Server)
 }
 
-func handleRequests() {
-	fmt.Println("Starting server...")
-	http.HandleFunc("/", homepage)
-	log.Fatal(http.ListenAndServe(":8081", nil))
+// config the settings variable
+var config = &configuration{}
+
+// configuration contains the application settings
+type configuration struct {
+	Server server.Server `json:"Server"`
 }
 
-func homepage(writer http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(writer, "This is root route")
-	fmt.Println("Endpoint hit: / ")
+// ParseJSON unmarshals bytes to structs
+func (c *configuration) ParseJSON(b []byte) error {
+	return json.Unmarshal(b, &c)
 }
