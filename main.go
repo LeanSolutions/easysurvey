@@ -1,10 +1,13 @@
 package main
 
 import (
+	"EasySurvey/app/route"
+	"EasySurvey/app/shared/jsonconfig"
 	"EasySurvey/app/shared/server"
 	"encoding/json"
 	"os"
 	"runtime"
+	"EasySurvey/app/controller"
 )
 
 func init() {
@@ -12,7 +15,9 @@ func init() {
 }
 
 func main() {
-	jsonconfig.Load("config"+string(os.PathSeparator)+"config.json", config)
+	jsonconfig.Load("app"+string(os.PathSeparator)+"config"+string(os.PathSeparator)+"config.json", config)
+
+	controller.Load()
 
 	server.Run(route.LoadHTTP(), config.Server)
 }

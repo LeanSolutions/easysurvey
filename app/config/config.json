@@ -2,6 +2,6 @@
     "Server": {
         "Hostname": "",
 		"UseHTTP": true,
-		"HTTPPort": 80
+		"HTTPPort": 8081
     }
 }

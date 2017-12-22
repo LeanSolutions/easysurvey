@@ -4,8 +4,14 @@
   sudo: True
   roles:
     - role: joshualund.golang
-
+    - role: geerlingguy.git
+    
   tasks:
+    - name: get dependednt packages
+      shell: chdir=/home/vagrant/go/src/EasySurvey go get -d github.com/julienschmidt/httprouter
+      environment: 
+        PATH: $PATH:/usr/local/go/bin
+
     - name: run main.go
       shell: chdir=/home/vagrant/go/src/EasySurvey nohup go run main.go &
       environment: 
