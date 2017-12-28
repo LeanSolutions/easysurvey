@@ -8,11 +8,13 @@
     
   tasks:
     - name: get dependednt packages
-      shell: chdir=/home/vagrant/go/src/EasySurvey go get -d github.com/julienschmidt/httprouter
+      shell: chdir=/home/vagrant/go/src/EasySurvey go get github.com/julienschmidt/httprouter
       environment: 
-        PATH: $PATH:/usr/local/go/bin
+        PATH: $PATH:/usr/local/go/bin:/usr/bin
+        GOPATH: /home/vagrant/go
 
     - name: run main.go
       shell: chdir=/home/vagrant/go/src/EasySurvey nohup go run main.go &
       environment: 
-        PATH: $PATH:/usr/local/go/bin
+        PATH: $PATH:/usr/local/go/bin:/usr/bin
+        GOPATH: /home/vagrant/go

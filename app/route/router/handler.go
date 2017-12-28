@@ -3,7 +3,6 @@ package router
 import (
 	"net/http"
 
-	//"github.com/gorilla/context"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -12,7 +11,6 @@ import (
 // Source: http://nicolasmerouze.com/guide-routers-golang/
 func HandlerFunc(h http.HandlerFunc) httprouter.Handle {
 	return func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-		//context.Set(r, p, p)
 		h.ServeHTTP(w, r)
 	}
 }
@@ -22,7 +20,6 @@ func HandlerFunc(h http.HandlerFunc) httprouter.Handle {
 // Source: http://nicolasmerouze.com/guide-routers-golang/
 func Handler(h http.Handler) httprouter.Handle {
 	return func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-		//context.Set(r, p,)
 		h.ServeHTTP(w, r)
 	}
 }
