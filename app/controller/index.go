@@ -7,7 +7,6 @@ import (
 )
 
 func init() {
-	// Main page
 	router.Get("/", Index)
 }
 
