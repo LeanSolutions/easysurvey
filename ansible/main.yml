@@ -7,7 +7,7 @@
     - role: geerlingguy.git
     
   tasks:
-    - name: get dependednt packages
+    - name: get httprouter package
       shell: chdir=/home/vagrant/go/src/EasySurvey go get github.com/julienschmidt/httprouter
       environment: 
         PATH: $PATH:/usr/local/go/bin:/usr/bin

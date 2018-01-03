@@ -2,12 +2,13 @@ package survey
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetAllReturnsAllSurveys(t *testing.T) {
+	assert := assert.New(t)
 	surveys := GetAll()
 
-	if len(surveys) <= 0 {
-		t.Errorf("Expected more than one survey to be returned, but got %d instead.", len(surveys))
-	}
+	assert.NotZero(surveys, "It should return more than one survey")
 }
