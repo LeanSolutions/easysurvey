@@ -3,9 +3,12 @@ package route
 import (
 	"EasySurvey/app/route/router"
 	"net/http"
+	"EasySurvey/app/route/cors"
 )
 
 // LoadHTTP loads the HTTP routes
 func LoadHTTP() http.Handler {
-	return router.Instance()
+	var instance = router.Instance()
+
+	return cors.Handler(instance) 
 }
