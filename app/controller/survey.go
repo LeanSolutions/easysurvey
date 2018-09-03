@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"EasySurvey/app/model/survey"
-	"EasySurvey/app/route/router"
-	"EasySurvey/app/shared/response"
+	"github.com/lavpthak/easysurvey/app/model/survey"
+	"github.com/lavpthak/easysurvey/app/route/router"
+	"github.com/lavpthak/easysurvey/app/shared/response"
 	"net/http"
 )
 

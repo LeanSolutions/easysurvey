@@ -1,13 +1,13 @@
 package main
 
 import (
-	"EasySurvey/app/route"
-	"EasySurvey/app/shared/jsonconfig"
-	"EasySurvey/app/shared/server"
+	"github.com/lavpthak/easysurvey/app/route"
+	"github.com/lavpthak/easysurvey/app/shared/jsonconfig"
+	"github.com/lavpthak/easysurvey/app/shared/server"
 	"encoding/json"
 	"os"
 	"runtime"
-	"EasySurvey/app/controller"
+	"github.com/lavpthak/easysurvey/app/controller"
 )
 
 func init() {

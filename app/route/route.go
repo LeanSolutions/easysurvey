@@ -1,9 +1,9 @@
 package route
 
 import (
-	"EasySurvey/app/route/router"
+	"github.com/lavpthak/easysurvey/app/route/router"
 	"net/http"
-	"EasySurvey/app/route/cors"
+	"github.com/lavpthak/easysurvey/app/route/cors"
 )
 
 // LoadHTTP loads the HTTP routes

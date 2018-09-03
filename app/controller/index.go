@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"EasySurvey/app/route/router"
-	"EasySurvey/app/shared/response"
+	"github.com/lavpthak/easysurvey/app/shared/response"
 	"net/http"
+	"github.com/lavpthak/easysurvey/app/route/router"
 )
 
 func init() {
