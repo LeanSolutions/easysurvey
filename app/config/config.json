@@ -1,7 +1,0 @@
-{
-    "Server": {
-        "Hostname": "",
-		"UseHTTP": true,
-		"HTTPPort": 8081
-    }
-}
